@@ -2,74 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookie Clicker</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Games</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .game-link {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .game-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <div id="game">
-        <h1>Cookie Clicker</h1>
-        <div id="cookie-container">
-            <img src="cookie.png" id="cookie" alt="Cookie">
-        </div>
-        <p>Cookies: <span id="cookie-count">0</span></p>
-        <button id="buy-autoclicker">Buy Automaxi (Cost: 10 Cookies)</button>
-        <button id="buy-grandma">Buy Grandmaxi (Cost: 20 Cookies)</button>
-        <p>Automaxis: <span id="autoclicker-count">0</span></p>
-        <p>Grandmaxis: <span id="grandma-count">0</span></p>
-    </div>
+    <h1>NicTrix Games Hub</h1>
+    
+    <p>Choose a game to play:</p>
+    
+    <a href="http://nictrixx23-2.github.io/snake-game/" class="game-link">Snake</a>
+    <a href="https://nictrixx23-2.github.io/battleships-remake/" class="game-link">Battleships(AI)</a>
+    <a href="https://nictrixx23-2.github.io/tetris/" class="game-link">Tetris</a>
+    <a href="https://nictrixx23-2.github.io/pixel-painter/" class="game-link">Draw</a>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let cookieCount = 0;
-            let autoclickerCount = 0;
-            let grandmaCount = 0;
-            let autoclickerCost = 10;
-            let grandmaCost = 20;
-            const cookie = document.getElementById('cookie');
-            const cookieCountDisplay = document.getElementById('cookie-count');
-            const buyAutoclickerButton = document.getElementById('buy-autoclicker');
-            const buyGrandmaButton = document.getElementById('buy-grandma');
-            const autoclickerCountDisplay = document.getElementById('autoclicker-count');
-            const grandmaCountDisplay = document.getElementById('grandma-count');
+    <br>
+    <a href="https://nictrixx23-2.github.io/games-hub" class="game-link">Battleships<br>(Player)<br>Not Working(WIP)</a>
+    <a href="https://nictrixx23-2.github.io/disconnect-four/" class="game-link">Disconnect Four</a>    
+    <a href="http://chat-nictrix.glitch.me/" class="game-link">Chat</a>    
+    <a href="https://nictrixx23-2.github.io/12./" class="game-link">Lil Mausi Clicker</a>
+    <p>Nennenswerte Erwähnung: Leonhoch5 für Hilfe bei dem Multiplayer von Battleships</p>
+    
+    <p>More games coming soon...</p>
 
-            cookie.addEventListener('click', function() {
-                cookieCount++;
-                updateDisplay();
-            });
+    
 
-            buyAutoclickerButton.addEventListener('click', function() {
-                if (cookieCount >= autoclickerCost) {
-                    cookieCount -= autoclickerCost;
-                    autoclickerCount++;
-                    autoclickerCost = Math.ceil(autoclickerCost * 1.2); // Increase cost by 20%
-                    updateDisplay();
-                }
-            });
-
-            buyGrandmaButton.addEventListener('click', function() {
-                if (cookieCount >= grandmaCost) {
-                    cookieCount -= grandmaCost;
-                    grandmaCount++;
-                    grandmaCost = Math.ceil(grandmaCost * 1.2); // Increase cost by 20%
-                    updateDisplay();
-                }
-            });
-
-            function updateDisplay() {
-                cookieCountDisplay.textContent = cookieCount;
-                autoclickerCountDisplay.textContent = autoclickerCount;
-                grandmaCountDisplay.textContent = grandmaCount;
-                buyAutoclickerButton.textContent = `Buy Automaxi (Cost: ${autoclickerCost} Cookies)`;
-                buyGrandmaButton.textContent = `Buy Grandmaxi (Cost: ${grandmaCost} Cookies)`;
-            }
-
-            setInterval(function() {
-                cookieCount += autoclickerCount;
-                cookieCount += grandmaCount * 5;
-                updateDisplay();
-            }, 1000);
-        });
-    </script>
 </body>
 </html>
